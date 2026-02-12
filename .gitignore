@@ -46,6 +46,8 @@ frontend/.idea
 frontend/*.iml
 frontend/*.ipr
 
+.env
+
 # =========================================
 # NetBeans specific (if ever used)
 # =========================================
