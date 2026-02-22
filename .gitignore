@@ -5,7 +5,9 @@ ME.md
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
-
+00xCTF.drawio
+.vscode/*
+Dockerfile.dev
 # =========================================
 # Backend (Spring/Java) ignores
 # =========================================

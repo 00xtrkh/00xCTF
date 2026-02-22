@@ -10,10 +10,12 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
 
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
     container_name: 00xctf-backend
     restart: always
     env_file:
@@ -22,6 +24,11 @@ services:
       - postgres
     ports:
       - "8080:8080"
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/pom.xml:/app/pom.xml
+    environment:
+      - SPRING_DEVTOOLS_RESTART_ENABLED=true
 
   #frontend:
   #   build: ./frontend
